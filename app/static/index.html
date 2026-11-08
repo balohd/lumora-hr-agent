@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lumora HR Agent</title>
+<style>
+:root{--bg:#f6f5f2;--panel:#fff;--ink:#1d1f23;--muted:#6b7078;--line:#e4e2dc;--accent:#2f5d50;--accent-2:#e8f0ec;--warn:#9a6a00;--warn-bg:#fdf6e3;--bad:#a33a2b;--bad-bg:#fbeceb;--code:#f2f1ed;--radius:10px;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+*{box-sizing:border-box}html,body{height:100%}
+body{margin:0;font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+.app{display:grid;grid-template-columns:270px minmax(0,1fr) 420px;height:100vh;overflow:hidden}
+aside,.trace{background:var(--panel);border-right:1px solid var(--line);overflow:auto}
+.trace{border-right:0;border-left:1px solid var(--line)}
+.brand{padding:18px 18px 10px;border-bottom:1px solid var(--line)}
+.brand h1{font-size:16px;margin:0}.brand p{margin:2px 0 0;color:var(--muted);font-size:12px}
+.sec{padding:14px 18px;border-bottom:1px solid var(--line)}
+.sec h2{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+select,textarea,button{font:inherit}
+select{width:100%;padding:7px 8px;border:1px solid var(--line);border-radius:8px;background:#fff}
+.demo{display:block;width:100%;text-align:left;margin:0 0 6px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:#fff;cursor:pointer;font-size:12.5px}
+.demo:hover{border-color:var(--accent);background:var(--accent-2)}
+.demo b{display:block;font-size:12.5px}
+.pill{display:inline-block;padding:1px 8px;border-radius:99px;font-size:11px;background:var(--code);color:var(--muted);margin:0 4px 4px 0;font-family:var(--mono)}
+.ok{color:var(--accent)}.bad{color:var(--bad)}
+main{display:flex;flex-direction:column;min-width:0;min-height:0;overflow:hidden}
+.msgs{flex:1;overflow:auto;padding:24px 28px}
+.msg{max-width:860px;margin:0 auto 18px}
+.msg.user .bubble{background:var(--accent);color:#fff;margin-left:auto;max-width:75%;border-radius:14px 14px 4px 14px;padding:10px 14px;width:fit-content}
+.msg.bot .bubble{background:var(--panel);border:1px solid var(--line);border-radius:14px 14px 14px 4px;padding:14px 18px}
+.meta{font-size:11.5px;color:var(--muted);margin-top:6px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.bubble table{border-collapse:collapse;width:100%;margin:8px 0;font-size:12.5px}
+.bubble th,.bubble td{border:1px solid var(--line);padding:5px 7px;vertical-align:top;text-align:left}
+.bubble th{background:var(--code)}
+.bubble blockquote{margin:8px 0;padding:8px 12px;background:var(--code);border-left:3px solid var(--accent);border-radius:6px;font-size:13px}
+.bubble p{margin:6px 0}.bubble ul,.bubble ol{margin:6px 0;padding-left:22px}
+.bubble code{font-family:var(--mono);background:var(--code);padding:0 4px;border-radius:4px;font-size:12px}
+.cite{display:inline-block;font-family:var(--mono);font-size:11px;background:var(--accent-2);color:var(--accent);padding:0 5px;border-radius:5px;cursor:pointer;white-space:nowrap}
+.cites{margin-top:10px;display:grid;gap:6px}
+.cites .c{border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:12.5px;background:#fcfcfb}
+.cites .c b{font-family:var(--mono);font-size:11.5px;color:var(--accent)}
+.banner{border-radius:8px;padding:8px 12px;margin-top:10px;font-size:13px}
+.banner.esc{background:var(--bad-bg);color:var(--bad)}.banner.act{background:var(--warn-bg);color:var(--warn)}
+.banner button{margin-left:8px;border:0;border-radius:6px;padding:5px 10px;background:var(--accent);color:#fff;cursor:pointer}
+.composer{border-top:1px solid var(--line);background:var(--panel);padding:12px 18px}
+.composer form{max-width:860px;margin:0 auto;display:flex;gap:8px}
+textarea{flex:1;resize:none;height:52px;padding:10px 12px;border:1px solid var(--line);border-radius:10px}
+.send{border:0;background:var(--accent);color:#fff;border-radius:10px;padding:0 18px;cursor:pointer}
+.send[disabled]{opacity:.5}
+.trace h2{padding:16px 18px 6px;margin:0;font-size:13px}.trace .sub{padding:0 18px 10px;color:var(--muted);font-size:12px;border-bottom:1px solid var(--line)}
+.step{border-bottom:1px solid var(--line);padding:9px 18px;font-size:12.5px}
+.step summary{cursor:pointer;list-style:none;display:flex;gap:8px;align-items:baseline}
+.step summary::-webkit-details-marker{display:none}
+.n{font-family:var(--mono);color:var(--muted);width:18px;flex:none}
+.kind{font-family:var(--mono);font-size:10.5px;text-transform:uppercase;padding:0 6px;border-radius:5px;background:var(--code);flex:none}
+.kind.tool_call{background:var(--accent-2);color:var(--accent)}.kind.guardrail,.kind.escalation{background:var(--bad-bg);color:var(--bad)}
+.kind.clarification{background:var(--warn-bg);color:var(--warn)}
+.tname{font-family:var(--mono);font-weight:600}
+pre{font-family:var(--mono);font-size:11px;background:var(--code);padding:8px;border-radius:6px;overflow:auto;max-height:260px;white-space:pre-wrap;word-break:break-word;margin:6px 0 0}
+.empty{color:var(--muted);text-align:center;margin-top:18vh}
+.typing{color:var(--muted);font-style:italic}
+@media (max-width:1100px){.app{grid-template-columns:240px 1fr}.trace{display:none}}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside>
+    <div class="brand"><h1>Lumora HR Agent</h1><p>Agentic RAG + MCP · synthetic data only</p></div>
+    <div class="sec"><h2>Acting employee</h2><select id="emp"><option value="">— none (policy questions only) —</option></select></div>
+    <div class="sec"><h2>Demo tasks</h2><div id="demos"></div></div>
+    <div class="sec"><h2>System status</h2><div id="health">checking…</div></div>
+    <div class="sec"><h2>MCP tools discovered</h2><div id="tools"></div></div>
+  </aside>
+  <main>
+    <div class="msgs" id="msgs"><div class="empty" id="empty">Ask about PTO, remote work, expenses, benefits, leave, security…<br>or run a demo task from the left.</div></div>
+    <div class="composer"><form id="f"><textarea id="q" placeholder="e.g. Can I work from Spain for two weeks next month?"></textarea><button class="send" id="send">Send</button></form></div>
+  </main>
+  <section class="trace">
+    <h2>Agent trace</h2>
+    <div class="sub" id="tracesub">Operational trace of the last request: intent, plan, MCP tool calls (arguments + outputs), guardrails, and answer basis. No hidden chain-of-thought.</div>
+    <div id="trace"></div>
+  </section>
+</div>
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function inline(s){
+  s = esc(s);
+  s = s.replace(/`([^`]+)`/g,"<code>$1</code>").replace(/\*\*([^*]+)\*\*/g,"<b>$1</b>").replace(/(^|[^\w])_([^_]+)_(?=[^\w]|$)/g,"$1<i>$2</i>");
+  s = s.replace(/\[((?:POL-\d{3} §[\d.]+(?:, )?)+)\]/g,(m,g)=>g.split(", ").map(c=>`<span class="cite" data-c="${c}">${c}</span>`).join(" "));
+  return s;
+}
+function md(text){
+  const lines = text.split("\n"); let html = "", i = 0;
+  while(i < lines.length){
+    let l = lines[i];
+    if(/^\s*\|/.test(l)){ const rows=[]; while(i<lines.length && /^\s*\|/.test(lines[i])) rows.push(lines[i++]);
+      const cells = r => r.trim().replace(/^\||\|$/g,"").split("|").map(c=>c.trim());
+      html += "<table><tr>"+cells(rows[0]).map(c=>`<th>${inline(c)}</th>`).join("")+"</tr>";
+      rows.slice(2).forEach(r=> html += "<tr>"+cells(r).map(c=>`<td>${inline(c)}</td>`).join("")+"</tr>"); html += "</table>"; continue; }
+    if(/^>/.test(l)){ const q=[]; while(i<lines.length && /^>/.test(lines[i])) q.push(lines[i++].replace(/^>\s?/,""));
+      html += "<blockquote>"+q.map(inline).join("<br>")+"</blockquote>"; continue; }
+    if(/^\s*[-*] /.test(l)){ html+="<ul>"; while(i<lines.length && /^\s*[-*] /.test(lines[i])) html+="<li>"+inline(lines[i++].replace(/^\s*[-*] /,""))+"</li>"; html+="</ul>"; continue; }
+    if(/^\s*\d+\. /.test(l)){ html+="<ol>"; while(i<lines.length && /^\s*\d+\. /.test(lines[i])) html+="<li>"+inline(lines[i++].replace(/^\s*\d+\. /,""))+"</li>"; html+="</ol>"; continue; }
+    if(l.trim()) html += "<p>"+inline(l)+"</p>"; i++;
+  }
+  return html;
+}
+function add(role, html){
+  $("#empty")?.remove();
+  const d = document.createElement("div"); d.className = "msg "+role; d.innerHTML = `<div class="bubble">${html}</div>`;
+  $("#msgs").appendChild(d); $("#msgs").scrollTop = 1e9; return d;
+}
+function renderTrace(r){
+  $("#tracesub").innerHTML = `intent <span class="pill">${esc(r.intent)}</span> mode <span class="pill">${esc(r.mode)}</span> synthesis <span class="pill">${esc(r.synthesis)}</span> ${r.latency_ms} ms · ${r.tools_used.length} MCP tool call(s)`;
+  $("#trace").innerHTML = r.trace.map(s => {
+    const head = s.type==="tool_call" ? `<span class="tname">${esc(s.tool)}</span> <span style="color:var(--muted)">${esc(s.result_summary)}</span>`
+      : s.type==="intent" ? `intent=<b>${esc(s.intent)}</b> ${Object.keys(s.slots||{}).length? "slots: "+esc(JSON.stringify(s.slots)):""}`
+      : s.type==="plan" ? `workflow=<b>${esc(s.workflow)}</b> · ${s.rag_only?"RAG only":"tools + RAG"}`
+      : s.type==="final" ? `basis: ${esc(s.answer_basis)}`
+      : esc(s.rule || s.reason || s.purpose || s.decision || s.to || "");
+    const body = s.type==="tool_call" ? `<div><b>arguments</b><pre>${esc(JSON.stringify(s.arguments,null,2))}</pre><b>output</b> <span style="color:var(--muted)">(${s.latency_ms} ms)</span><pre>${esc(JSON.stringify(s.output,null,2))}</pre></div>`
+      : `<pre>${esc(JSON.stringify(s,null,2))}</pre>`;
+    return `<details class="step"><summary><span class="n">${s.step}</span><span class="kind ${s.type}">${s.type.replace("_"," ")}</span><span>${head}</span></summary>${body}</details>`;
+  }).join("");
+}
+async function send(message, confirm){
+  const employee_id = $("#emp").value || null;
+  if(!confirm) add("user", esc(message));
+  const pending = add("bot", `<span class="typing">${confirm? "Executing confirmed mock action…" : "Planning, calling MCP tools, retrieving policy…"}</span>`);
+  $("#send").disabled = true;
+  try{
+    const res = await fetch("/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message: message||"(confirm)", employee_id, confirm_action: confirm||null})});
+    const r = await res.json();
+    if(!res.ok) throw new Error(r.detail || res.statusText);
+    let html = md(r.answer);
+    if(r.citations?.length) html += `<div class="cites">${r.citations.map(c=>`<div class="c"><b>${esc(c.citation)}</b> ${esc(c.title)}${c.section_title? " › "+esc(c.section_title):""}<div style="color:var(--muted)">${esc(c.snippet)}</div></div>`).join("")}</div>`;
+    if(r.escalation?.escalate) html += `<div class="banner esc">Escalation: <b>${esc(r.escalation.to)}</b> (severity ${r.escalation.severity}) — ${inline(r.escalation.reason)}</div>`;
+    if(r.pending_action) html += `<div class="banner act">Pending mock action (nothing created yet): <b>${esc(r.pending_action.label)}</b><button data-act='${esc(JSON.stringify(r.pending_action))}'>Confirm &amp; create</button></div>`;
+    html += `<div class="meta"><span class="pill">${esc(r.intent)}</span><span class="pill">${r.latency_ms} ms</span><span class="pill">${r.grounded? "citations verified":"unverified citations: "+esc(r.unsupported_citations.join(", "))}</span>${r.tools_used.map(t=>`<span class="pill">${esc(t)}</span>`).join("")}</div>`;
+    pending.querySelector(".bubble").innerHTML = html; renderTrace(r);
+    pending.querySelectorAll("button[data-act]").forEach(b => b.onclick = () => { b.disabled = true; send("", JSON.parse(b.dataset.act)); });
+  }catch(e){ pending.querySelector(".bubble").innerHTML = `<span class="bad">Error: ${esc(e.message)}</span>`; }
+  $("#send").disabled = false; $("#msgs").scrollTop = 1e9;
+}
+$("#f").onsubmit = e => { e.preventDefault(); const q = $("#q").value.trim(); if(q){ $("#q").value=""; send(q); } };
+$("#q").addEventListener("keydown", e => { if(e.key==="Enter" && !e.shiftKey){ e.preventDefault(); $("#f").requestSubmit(); } });
+document.addEventListener("click", e => { const c = e.target.closest(".cite"); if(c){ const t=[...document.querySelectorAll(".cites .c b")].find(b=>b.textContent===c.dataset.c); t?.parentElement.scrollIntoView({behavior:"smooth",block:"center"}); }});
+
+(async () => {
+  const emps = (await (await fetch("/employees")).json()).employees;
+  $("#emp").innerHTML += emps.map(e=>`<option value="${e.employee_id}">${e.employee_id} · ${esc(e.name)} — ${esc(e.title)}</option>`).join("");
+  const demos = (await (await fetch("/demo-tasks")).json()).tasks;
+  $("#demos").innerHTML = demos.map((d,i)=>`<button class="demo" data-i="${i}"><b>${esc(d.title)}</b>${d.employee_id? esc(d.employee_id)+": ":""}${esc(d.message)}</button>`).join("");
+  document.querySelectorAll(".demo").forEach(b => b.onclick = () => { const d = demos[b.dataset.i]; $("#emp").value = d.employee_id; send(d.message); });
+  const t = await (await fetch("/tools")).json();
+  $("#tools").innerHTML = `<div style="color:var(--muted);font-size:12px;margin-bottom:6px">transport: ${esc(t.transport)}</div>` + t.tools.map(x=>`<span class="pill" title="${esc(x.description)}">${esc(x.name)}</span>`).join("");
+  const h = await fetch("/health"); const hj = await h.json();
+  $("#health").innerHTML = `<div class="${hj.status==="ok"?"ok":"bad"}">● ${esc(hj.status)}</div><div style="font-size:12px;color:var(--muted)">MCP: ${hj.mcp.connected?"connected":"down"} (${hj.mcp.tool_count} tools)<br>LLM: ${esc(hj.llm.provider)}${hj.llm.model? " · "+esc(hj.llm.model):""}</div>`;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "url": "http://localhost:8002",
+  "first_health_ms (cold if idle)": 7.0,
+  "health_status": 200,
+  "first_chat_ms": 137.8,
+  "first_chat_status": 200,
+  "warm_http_ms": {
+    "n": 15,
+    "p50": 26.9,
+    "p95": 54.9,
+    "mean": 29.1
+  },
+  "warm_server_side_ms": {
+    "p50": 25.0,
+    "p95": 52.4
+  }
+}

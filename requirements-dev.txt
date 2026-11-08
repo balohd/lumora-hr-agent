@@ -1,0 +1,3 @@
+-r requirements.txt
+pytest==9.2.0
+reportlab==5.1.0            # only needed to regenerate the PDF policy (scripts/build_pdf_policy.py)

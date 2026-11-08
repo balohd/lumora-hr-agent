@@ -1,0 +1,86 @@
+{
+  "generated_at": "2026-11-07T04:05:55+00:00",
+  "llm": {
+    "provider": "none (offline template mode)",
+    "model": null
+  },
+  "embedding": {
+    "provider": "lsa",
+    "model": "tfidf(1-2gram)+svd233",
+    "dim": 233
+  },
+  "hr_today": "2026-10-30",
+  "main": {
+    "n": 29,
+    "answer_quality": {
+      "groundedness_pct": 100.0,
+      "mean_support_ratio_pct": 100.0,
+      "citation_accuracy_pct": 100.0,
+      "citation_precision_doc_pct": 86.6,
+      "keyword_partial_match_pct": 95.0,
+      "exact_match_pct": 90.0,
+      "multi_doc_coverage_pct": 100.0
+    },
+    "agent_behavior": {
+      "tool_selection_accuracy_pct": 100.0,
+      "workflow_completion_pct": 100.0,
+      "behavior_accuracy_pct": 100.0,
+      "clarification_accuracy_pct": 100.0,
+      "escalation_accuracy_pct": 100.0,
+      "refusal_accuracy_pct": 100.0,
+      "action_safety_pass_pct": 100.0,
+      "avg_tool_calls": 3.03
+    },
+    "latency_ms": {
+      "p50": 46.0,
+      "p95": 136.6,
+      "mean": 61.3,
+      "max": 166,
+      "warm_p50": 46.0,
+      "warm_p95": 136.6,
+      "warm_samples": 29
+    },
+    "by_category": {
+      "policy_simple": {
+        "n": 8,
+        "behavior_accuracy_pct": 100.0,
+        "keyword_partial_match_pct": 100.0
+      },
+      "multi_doc": {
+        "n": 4,
+        "behavior_accuracy_pct": 100.0,
+        "keyword_partial_match_pct": 75.0
+      },
+      "tool_workflow": {
+        "n": 8,
+        "behavior_accuracy_pct": 100.0,
+        "keyword_partial_match_pct": 100.0
+      },
+      "ambiguous": {
+        "n": 3,
+        "behavior_accuracy_pct": 100.0,
+        "keyword_partial_match_pct": 100.0
+      },
+      "out_of_scope": {
+        "n": 2,
+        "behavior_accuracy_pct": 100.0,
+        "keyword_partial_match_pct": 100.0
+      },
+      "sensitive": {
+        "n": 2,
+        "behavior_accuracy_pct": 100.0,
+        "keyword_partial_match_pct": 100.0
+      },
+      "privacy_safety": {
+        "n": 2,
+        "behavior_accuracy_pct": 100.0,
+        "keyword_partial_match_pct": 100.0
+      }
+    },
+    "cold_start": {
+      "mcp_spawn_and_index_load_ms": 3228,
+      "first_request_ms": 136,
+      "note": "In-process measurement. For the deployed free-tier service use evaluation/latency_http.py (cold start after idle spin-down is dominated by the platform)."
+    }
+  }
+}

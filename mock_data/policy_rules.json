@@ -1,0 +1,47 @@
+{
+  "_note": "Machine-readable policy parameters extracted from the synthetic Lumora corpus. Used by the check_policy_compliance MCP tool. Every rule carries its source citation.",
+  "pto": {
+    "notice_business_days": [
+      {"max_days": 2, "notice": 3, "ref": "POL-002 §6.2"},
+      {"max_days": 5, "notice": 10, "ref": "POL-002 §6.2"},
+      {"max_days": 9999, "notice": 20, "ref": "POL-002 §6.2"}
+    ],
+    "extended_pto_threshold_days": 10, "extended_pto_ref": "POL-002 §6.4",
+    "negative_balance_limit_days": 3, "negative_balance_ref": "POL-002 §8",
+    "manager_approval_ref": "POL-002 §6.1",
+    "blackouts": [
+      {"department": "Customer Support", "start_mmdd": "12-15", "end_mmdd": "01-05", "approver": "Director of Customer Support", "ref": "POL-002 §7"},
+      {"department": "Finance", "rule": "last 5 business days of each fiscal quarter and first 5 business days of January", "approver": "Controller", "ref": "POL-002 §7"}
+    ]
+  },
+  "temporary_remote_work": {
+    "domestic_other_state_max_workdays_per_year": 20, "domestic_notice_business_days": 10, "domestic_ref": "POL-005 §3.2",
+    "domestic_relocation_threshold_workdays": 60,
+    "international_max_workdays_rolling_12m": 20, "international_notice_calendar_days": 30, "international_ref": "POL-005 §4.1",
+    "international_min_tenure_months": 6, "international_eligibility_ref": "POL-005 §4.2",
+    "eligible_ratings": ["Exceptional", "Exceeds Expectations", "Meets Expectations"],
+    "approved_countries": ["Austria","Belgium","Bulgaria","Croatia","Cyprus","Czech Republic","Denmark","Estonia","Finland","France","Germany","Greece","Hungary","Ireland","Italy","Latvia","Lithuania","Luxembourg","Malta","Netherlands","Poland","Portugal","Romania","Slovakia","Slovenia","Spain","Sweden","United Kingdom","UK","Canada","United States","US","USA","Mexico","Japan","Australia","New Zealand","Singapore"],
+    "approved_countries_ref": "POL-005 §5.2",
+    "approvals_international": ["Manager", "People Team (Global Mobility)", "Information Security"], "approvals_ref": "POL-005 §4.3",
+    "exception_ref": "POL-005 §7", "restricted_data_ref": "POL-005 §6.3", "security_ref": "POL-007 §8",
+    "non_remote_roles_ref": "POL-004 §3.2"
+  },
+  "expenses": {
+    "categories": {
+      "laptop": {"reimbursable": false, "reason": "Laptops are provided by IT; personal purchases of laptops, tablets or phones are not reimbursable.", "refs": ["POL-006 §9", "POL-011 §3"]},
+      "phone": {"reimbursable": false, "reason": "Personal phone purchases are not reimbursable; on-call roles receive a $40 monthly stipend via payroll.", "refs": ["POL-006 §9"]},
+      "monitor": {"reimbursable": false, "reason": "Monitors are provided by IT and are ineligible for the home office stipend.", "refs": ["POL-011 §2", "POL-011 §5.3"]},
+      "office_chair": {"reimbursable": "stipend", "reason": "Ergonomic chairs are covered only through the one-time home office stipend ($500 remote / $250 hybrid; onsite not eligible).", "refs": ["POL-006 §9", "POL-011 §5.1", "POL-011 §5.2"]},
+      "desk": {"reimbursable": "stipend", "reason": "Desks are covered only through the home office stipend.", "refs": ["POL-011 §5.2"]},
+      "internet": {"reimbursable": "monthly_cap", "caps": {"remote": 50, "hybrid": 25, "onsite": 0}, "reason": "Monthly home internet reimbursement.", "refs": ["POL-006 §9"]},
+      "meal_travel_domestic": {"reimbursable": "cap", "cap": 75, "reason": "Daily meal maximum, domestic travel.", "refs": ["POL-006 §7"]},
+      "meal_travel_international": {"reimbursable": "cap", "cap": 100, "reason": "Daily meal maximum, international travel.", "refs": ["POL-006 §7"]},
+      "hotel": {"reimbursable": "cap", "cap": 250, "high_cost_cap": 350, "high_cost_cities": ["New York","San Francisco","Boston","Seattle","Washington DC","London","Toronto","Zurich","Tokyo"], "reason": "Nightly lodging limit excluding taxes.", "refs": ["POL-006 §6"]},
+      "client_entertainment": {"reimbursable": "cap", "cap": 150, "per_person": true, "requires_preapproval": true, "reason": "Client entertainment per person, pre-approval required.", "refs": ["POL-006 §8"]},
+      "training": {"reimbursable": "stipend", "cap": 1500, "reason": "Learning stipend per calendar year (full-time).", "refs": ["POL-008 §10", "POL-006 §3"]},
+      "gym": {"reimbursable": false, "reason": "Gym fees are not expense-reimbursable; use the $50/month wellness stipend.", "refs": ["POL-006 §12", "POL-008 §9"]},
+      "temporary_remote_work_travel": {"reimbursable": false, "reason": "Costs of temporary remote work chosen for personal reasons are not reimbursed.", "refs": ["POL-005 §9"]}
+    },
+    "preapproval_threshold": 500, "receipt_threshold": 25, "submission_days": 30, "refs_general": ["POL-006 §3", "POL-006 §4"]
+  }
+}

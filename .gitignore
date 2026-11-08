@@ -1,0 +1,12 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+data/index/
+data/index_*/
+data/models/
+data/runtime_tickets.json
+data/test_runtime_tickets.json
+.DS_Store

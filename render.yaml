@@ -1,0 +1,27 @@
+# Render Blueprint: one free web service running the web app, agent orchestrator, MCP server (stdio child
+# process), FAISS index and synthetic JSON data. Deploys are triggered by GitHub Actions only after tests pass.
+services:
+  - type: web
+    name: lumora-hr-agent
+    runtime: python
+    plan: free
+    region: oregon
+    autoDeploy: false            # CI calls the deploy hook after the test job succeeds
+    buildCommand: pip install -r requirements.txt && python -m rag.ingest
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.5
+      - key: EMBEDDING_PROVIDER
+        value: auto              # bge-small via fastembed; falls back to offline LSA if the model can't be fetched
+      - key: FASTEMBED_CACHE
+        value: /opt/render/project/src/data/models
+      - key: AGENT_MODE
+        value: planner
+      - key: LLM_PROVIDER
+        value: groq
+      - key: GROQ_API_KEY
+        sync: false              # set in the Render dashboard (secret)
+      - key: RETRIEVAL_K
+        value: "5"

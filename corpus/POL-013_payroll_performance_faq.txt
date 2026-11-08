@@ -1,0 +1,70 @@
+PAYROLL, COMPENSATION, AND PERFORMANCE FAQ
+
+Document ID: POL-013
+Owner: People Team (Total Rewards and People Operations), with Payroll
+Effective date: January 1, 2026
+Applies to: All employees of Lumora Systems, Inc. Interns follow the payroll sections only.
+
+Note: Lumora Systems, Inc. is a fictional company. This document is synthetic and was created for an educational AI engineering project.
+
+1. PURPOSE
+
+This FAQ answers common questions about pay schedules, pay statements, timekeeping, compensation reviews, and the performance review cycle. It summarizes official Lumora practices; where this FAQ refers to another policy, that policy governs.
+
+2. PAY SCHEDULE
+
+2.1 How often am I paid? US employees are paid semi-monthly, on the 15th and the last day of each month. If a payday falls on a weekend or US Company holiday, pay is deposited on the preceding business day. Canadian employees are paid semi-monthly on the same schedule. UK employees are paid monthly on the last business day of the month.
+
+2.2 How is pay delivered? Pay is delivered by direct deposit to the bank account(s) recorded in PeopleHub. Employees may split deposits across up to 3 accounts. Changes to bank details submitted at least 5 business days before payday take effect that pay period.
+
+2.3 Where can I see my pay statement? Pay statements and year-end tax forms (W-2 in the US, T4 in Canada, P60 in the UK) are available in PeopleHub. W-2 forms are available by January 31 each year.
+
+3. TIMEKEEPING
+
+3.1 Exempt employees (salaried employees who are not eligible for overtime under applicable law) do not record hours, but must record PTO, sick time, and leave in PeopleHub.
+
+3.2 Non-exempt (hourly) employees must record all hours worked in PeopleHub daily, including any time worked outside scheduled hours (for example, answering messages after hours). Working "off the clock" is prohibited. Timesheets must be submitted by 10:00 am on the Monday following each workweek and approved by the manager by end of day Monday.
+
+3.3 Overtime. Non-exempt employees are paid overtime at 1.5 times their regular rate for hours worked over 40 in a workweek, and as otherwise required by state law (for example, daily overtime in California and Colorado overtime rules). Overtime must be approved by the manager in advance, but all hours worked are paid even if not pre-approved.
+
+3.4 Meal and rest breaks. Non-exempt employees take meal and rest breaks as required by state or local law. In Colorado, non-exempt employees receive a paid 10-minute rest break for every 4 hours worked and an unpaid 30-minute meal break for shifts over 5 hours.
+
+4. PAY ERRORS
+
+4.1 What should I do if my pay is wrong? Open a Payroll case in PeopleHub with the pay date, the expected amount, and the amount received. Payroll cases are Severity 2 under POL-012. If an underpayment is confirmed, Lumora will correct it no later than the next regular payday, or by off-cycle payment within 3 business days if the underpayment is greater than $200 or 5% of net pay, whichever is less.
+
+4.2 Overpayments are recovered only after the employee is notified and, where required by law, consents to the recovery schedule.
+
+5. COMPENSATION STRUCTURE
+
+5.1 Pay zones. Base salaries are set using Lumora's job architecture, which assigns each role a level and a salary range. Ranges vary by geographic pay zone: Zone A (San Francisco Bay Area, New York City, Seattle), Zone B (Austin, Denver, Boston, Los Angeles, Chicago, Toronto, London), and Zone C (all other approved locations). An approved relocation may result in a pay zone change (POL-004 section 9).
+
+5.2 Pay transparency. Salary ranges are included in all job postings, and employees may view the range for their own role in PeopleHub. Lumora complies with pay transparency laws including Colorado's Equal Pay for Equal Work Act.
+
+5.3 Bonus. Employees at Level 5 and below participate in an annual Company bonus plan with a target of 5% to 10% of base salary depending on level, paid in March based on Company performance and individual performance rating. Employees must be employed on the payment date to receive the bonus, except where law requires otherwise. Sales roles participate in commission plans instead.
+
+5.4 Equity. Eligible full-time employees receive restricted stock units (RSUs) at hire, vesting over 4 years with a 1-year cliff. Refresh grants may be awarded during the annual review cycle. Equity details are governed by the equity plan documents, not this FAQ.
+
+6. PERFORMANCE REVIEW CYCLE
+
+6.1 Timing. Lumora runs one annual performance review cycle. Self-reviews and peer feedback are collected in January; manager reviews and calibration take place in February; ratings and compensation outcomes are communicated in March and take effect April 1. A lighter mid-year check-in takes place in July and does not produce a rating.
+
+6.2 Eligibility. Employees hired on or before September 30 of the prior year participate in the annual review cycle. Employees hired after September 30 receive a check-in instead of a rating, and are first rated in the following cycle.
+
+6.3 Rating scale. Ratings use a five-point scale: Exceptional, Exceeds Expectations, Meets Expectations, Partially Meets Expectations, and Does Not Meet Expectations. The most recent rating is stored in PeopleHub and is used as an eligibility factor in some policies, including remote work (POL-004 section 3.2) and work from abroad (POL-005 section 4.2).
+
+6.4 Merit increases. Merit increases are based on rating, position in salary range, and the Company budget. Employees rated "Partially Meets" or "Does Not Meet" are not eligible for a merit increase in that cycle.
+
+6.5 Promotions. Promotions are reviewed twice a year (April and October). Managers nominate employees with a promotion case that documents performance at the next level for at least 6 months. Promotions take effect on the first day of the following month.
+
+7. PERFORMANCE IMPROVEMENT PLANS
+
+A performance improvement plan (PIP) is a structured plan of 30 to 90 days used when an employee's performance is below expectations. A PIP documents specific goals, support, and check-in dates, and is reviewed by the People Team before it is issued. Employees on a PIP are not eligible for a new remote arrangement, international temporary remote work, internal transfers, or promotion until the PIP is successfully completed. Employees may raise concerns about a PIP with the People Team.
+
+8. COMPENSATION QUESTIONS THE HR ASSISTANT CANNOT ANSWER
+
+The HR assistant does not have access to individual salary, bonus, or equity data and cannot answer questions about specific compensation amounts, compare an employee's pay to colleagues, or predict review outcomes. These questions should be directed to the employee's manager or the Total Rewards team at rewards@lumora.example.
+
+9. QUESTIONS
+
+Contact Payroll at payroll@lumora.example for pay questions and Total Rewards at rewards@lumora.example for compensation questions.

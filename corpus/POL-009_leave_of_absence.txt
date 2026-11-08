@@ -1,0 +1,106 @@
+LEAVE OF ABSENCE POLICY
+
+Document ID: POL-009
+Owner: People Team (Leave and Accommodations)
+Effective date: January 1, 2026
+Applies to: All regular employees of Lumora Systems, Inc. Where local law provides greater rights, local law applies.
+
+Note: Lumora Systems, Inc. is a fictional company. This document is synthetic and was created for an educational AI engineering project.
+
+1. PURPOSE
+
+Lumora recognizes that employees sometimes need extended time away from work for family, medical, civic, or personal reasons. This policy describes the types of leave available, eligibility, pay during leave, how to request leave, and how to return to work. Leaves of absence are different from Paid Time Off (POL-002), which is used for vacation and short personal absences, and from paid sick time (POL-002 section 9), which covers short illnesses.
+
+2. GENERAL PROCESS FOR REQUESTING LEAVE
+
+2.1 Notice. Where the need for leave is foreseeable (for example, the expected birth of a child or a scheduled surgery), employees must notify their manager and the People Team at least 30 days before the leave begins. Where the need is not foreseeable, employees must notify their manager and the People Team as soon as practicable, normally within 2 business days.
+
+2.2 Leave request. Employees request leave by opening a Leave Request case in PeopleHub. Lumora's leave administrator, CareBridge Leave Services, manages documentation, certification, and short-term disability claims on Lumora's behalf. Employees do not need to share medical details with their manager; medical information is shared only with CareBridge and authorized People Team members.
+
+2.3 Certification. Medical certification from a healthcare provider is required for medical leave and family care leave longer than 5 consecutive workdays. Certification must be returned to CareBridge within 15 calendar days of the request.
+
+2.4 Benefits during leave. During paid and job-protected leave, Lumora continues the employee's health benefits on the same terms as if they were working. Employees continue to pay their share of premiums.
+
+2.5 PTO accrual during leave. PTO continues to accrue during paid leave. PTO does not accrue during unpaid leave lasting more than 30 days.
+
+3. PARENTAL LEAVE
+
+3.1 Eligibility. All regular full-time and part-time employees who have completed 90 days of employment are eligible for paid parental leave following the birth of a child, adoption of a child, or placement of a foster child.
+
+3.2 Duration and pay.
+- Birthing parents receive up to 16 weeks of fully paid parental leave (100% of base salary). This includes any period of short-term disability for pregnancy and recovery; Lumora tops up short-term disability so that pay is 100% throughout.
+- Non-birthing parents (including adoptive and foster parents) receive up to 12 weeks of fully paid parental leave.
+- Part-time employees receive pay based on their regular scheduled hours.
+
+3.3 Timing. Parental leave must be taken within 12 months of the birth, adoption, or placement. It may be taken in one continuous block or in up to two blocks of at least 2 weeks each, with manager approval for the second block.
+
+3.4 Interaction with law. Parental leave runs concurrently with FMLA leave and any state-paid family leave program (for example, Colorado FAMLI). Where a state program pays benefits, Lumora pays the difference between the state benefit and 100% of base salary. Canadian and UK employees receive statutory parental, maternity, or paternity benefits, topped up by Lumora to 100% of base salary for the durations in section 3.2.
+
+4. FAMILY AND MEDICAL LEAVE ACT (FMLA) - UNITED STATES
+
+4.1 Eligibility. US employees are eligible for FMLA leave if they have worked for Lumora for at least 12 months, have worked at least 1,250 hours in the 12 months before the leave, and work at a location where Lumora has 50 or more employees within 75 miles. Lumora extends FMLA-equivalent job protection to all US employees who meet the first two requirements, regardless of location.
+
+4.2 Entitlement. Eligible employees may take up to 12 weeks of job-protected leave in a rolling 12-month period for: the birth and care of a newborn child or placement of a child for adoption or foster care; to care for a spouse, child, or parent with a serious health condition; the employee's own serious health condition; or qualifying exigencies related to a family member's military service. Up to 26 weeks are available to care for a covered servicemember with a serious injury or illness.
+
+4.3 Pay. FMLA leave itself is unpaid, but it runs concurrently with paid parental leave, short-term disability, and paid sick time, and employees may choose to use PTO during unpaid portions.
+
+4.4 Intermittent leave. FMLA leave may be taken intermittently or on a reduced schedule when medically necessary. Employees must make reasonable efforts to schedule treatment so as not to unduly disrupt operations.
+
+5. MEDICAL LEAVE AND SHORT-TERM DISABILITY
+
+5.1 Employees who are unable to work due to their own illness, injury, or pregnancy for more than 7 consecutive calendar days may apply for short-term disability (STD) through CareBridge.
+
+5.2 The first 7 calendar days are covered by paid sick time and, if needed, PTO.
+
+5.3 STD pays 60% of base salary for up to 12 weeks. Lumora tops up STD to 100% of base salary for the first 6 weeks of an approved claim, and to 60% thereafter. If the disability continues beyond 90 days, the employee may apply for long-term disability (POL-008 section 8).
+
+6. FAMILY CARE LEAVE
+
+Employees who are not eligible for FMLA, or who have exhausted it, may request up to 4 weeks of unpaid family care leave per year to care for a seriously ill family member, with job protection. Paid sick time and PTO may be used during family care leave.
+
+7. BEREAVEMENT LEAVE
+
+7.1 Employees receive paid bereavement leave upon the death of a family member:
+- Up to 5 workdays for an immediate family member: spouse or domestic partner, child, stepchild, parent, stepparent, sibling, or a member of the employee's household.
+- Up to 3 workdays for an extended family member: grandparent, grandchild, aunt, uncle, niece, nephew, cousin, or parent-in-law, sibling-in-law, or child-in-law.
+- Up to 5 workdays following a pregnancy loss experienced by the employee or their spouse or partner.
+
+7.2 Bereavement leave does not need to be taken consecutively and may be used within 3 months of the death. Employees should notify their manager and record bereavement leave in PeopleHub. Documentation is not normally required. Additional unpaid time or PTO may be requested.
+
+8. JURY DUTY AND WITNESS LEAVE
+
+Employees summoned for jury duty receive full base pay for up to 10 workdays per calendar year; additional days are unpaid unless local law requires otherwise. Employees must provide a copy of the summons to their manager as soon as it is received. Employees who are subpoenaed to appear as a witness receive unpaid leave (paid if the matter relates to Lumora business).
+
+9. MILITARY LEAVE
+
+Lumora complies with the Uniformed Services Employment and Reemployment Rights Act (USERRA) and applicable state laws. Employees called to military service receive job-protected leave. For the first 2 weeks of military leave per year, Lumora pays the difference between military pay and the employee's base salary.
+
+10. VOTING AND CIVIC LEAVE
+
+Employees who do not have sufficient time outside working hours to vote may take up to 2 hours of paid time to vote in any public election, with notice to their manager. Employees who serve as election officials may take unpaid leave for that day, or more where state law requires.
+
+11. PERSONAL LEAVE (UNPAID)
+
+Employees with at least 1 year of service may request unpaid personal leave of up to 30 calendar days for reasons not covered elsewhere in this policy, such as extended travel or education. Personal leave requires approval from the manager and the department head and is granted at Lumora's discretion based on business needs. Employees must use any available PTO above 5 days before beginning unpaid personal leave. Job protection is not guaranteed for personal leave longer than 30 days.
+
+12. ACCOMMODATIONS
+
+Employees who need a workplace accommodation because of a disability, pregnancy, or religious practice should request it through a PeopleHub case. The People Team will engage in an interactive process with the employee and, where appropriate, request supporting information from a healthcare provider through CareBridge. Accommodation requests are confidential and handled as Severity 2 cases under POL-012.
+
+13. RETURN TO WORK
+
+13.1 Employees returning from leave are restored to the same or an equivalent position with the same pay and benefits, except where the position would have been eliminated regardless of the leave.
+
+13.2 Employees returning from medical leave longer than 5 workdays must provide a fitness-for-duty certification to CareBridge before returning, if their healthcare provider placed restrictions on their work.
+
+13.3 Lumora supports a phased return to work (for example, part-time hours for the first 2 to 4 weeks) where medically advised or agreed with the manager.
+
+13.4 Employees who do not return at the end of an approved leave, and who do not contact the People Team within 3 business days, may be considered to have voluntarily resigned, except where prohibited by law.
+
+14. NON-RETALIATION
+
+Lumora prohibits interference with, restraint of, or retaliation against any employee for requesting or taking leave under this policy or under law. Concerns should be reported under POL-001 section 12.
+
+15. QUESTIONS
+
+Contact the Leave and Accommodations team at leave@lumora.example, or open a PeopleHub case.

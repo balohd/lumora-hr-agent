@@ -1,0 +1,14 @@
+# Runtime dependencies (Python 3.13). Pinned for reproducibility.
+mcp==1.30.0                 # Model Context Protocol SDK (FastMCP server + stdio / Streamable HTTP client)
+fastapi==0.162.0
+uvicorn[standard]==0.54.0
+pydantic==2.14.2
+faiss-cpu==1.15.1           # vector index
+numpy==2.5.4
+scikit-learn==1.9.1         # offline LSA embedder (fallback / CI)
+fastembed==0.9.1; platform_machine != "ARM64"
+openai==3.41.0              # OpenAI-compatible client for Groq / OpenRouter / OpenAI
+pypdf==6.21.4               # PDF parsing
+beautifulsoup4==4.15.0      # HTML parsing
+python-dotenv==1.2.4
+httpx==0.28.1

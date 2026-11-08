@@ -1,0 +1,18 @@
+{
+  "_note": "Synthetic policy corpus for the fictional company Lumora Systems, Inc. Metadata used for citations.",
+  "documents": [
+    {"doc_id": "POL-001", "file": "POL-001_code_of_conduct.md", "title": "Code of Conduct and Workplace Behavior Policy", "owner": "People Team (Employee Relations)", "topics": ["conduct", "harassment", "discrimination", "retaliation", "reporting", "gifts", "conflicts of interest"]},
+    {"doc_id": "POL-002", "file": "POL-002_paid_time_off.md", "title": "Paid Time Off (PTO) Policy", "owner": "People Team (Total Rewards)", "topics": ["pto", "vacation", "sick time", "carryover", "accrual", "notice"]},
+    {"doc_id": "POL-003", "file": "POL-003_holiday_calendar_2026.html", "title": "Holiday Calendar and Floating Holiday Policy 2026", "owner": "People Team (Total Rewards)", "topics": ["holidays", "floating holidays"]},
+    {"doc_id": "POL-004", "file": "POL-004_remote_hybrid_work.md", "title": "Remote and Hybrid Work Policy", "owner": "People Team (Workplace Programs)", "topics": ["remote work", "hybrid", "eligibility", "relocation"]},
+    {"doc_id": "POL-005", "file": "POL-005_international_cross_border_work.md", "title": "International and Cross-Border Work Policy", "owner": "People Team (Global Mobility)", "topics": ["work from abroad", "tax", "immigration", "another state", "exceptions"]},
+    {"doc_id": "POL-006", "file": "POL-006_travel_and_expense.md", "title": "Travel and Expense Reimbursement Policy", "owner": "Finance (Accounts Payable)", "topics": ["expenses", "travel", "reimbursement", "meals", "internet"]},
+    {"doc_id": "POL-007", "file": "POL-007_information_security.html", "title": "Information Security and Acceptable Use Policy", "owner": "Information Security", "topics": ["security", "vpn", "data classification", "devices", "ai tools"]},
+    {"doc_id": "POL-008", "file": "POL-008_benefits_overview.md", "title": "Benefits Overview", "owner": "People Team (Total Rewards)", "topics": ["benefits", "medical", "401k", "hsa", "open enrollment", "stipends"]},
+    {"doc_id": "POL-009", "file": "POL-009_leave_of_absence.txt", "title": "Leave of Absence Policy", "owner": "People Team (Leave and Accommodations)", "topics": ["parental leave", "fmla", "bereavement", "jury duty", "disability"]},
+    {"doc_id": "POL-010", "file": "POL-010_onboarding_offboarding.md", "title": "Onboarding and Offboarding Procedures", "owner": "People Team (People Operations)", "topics": ["onboarding", "offboarding", "checklist", "i-9", "training"]},
+    {"doc_id": "POL-011", "file": "POL-011_equipment_home_office.pdf", "title": "Equipment and Home Office Policy", "owner": "IT", "topics": ["equipment", "laptop", "home office stipend", "chair", "return"]},
+    {"doc_id": "POL-012", "file": "POL-012_hr_case_handling_escalation.md", "title": "HR Case Handling and Escalation Procedure", "owner": "People Team (Employee Relations)", "topics": ["cases", "escalation", "severity", "hr assistant"]},
+    {"doc_id": "POL-013", "file": "POL-013_payroll_performance_faq.txt", "title": "Payroll, Compensation, and Performance FAQ", "owner": "People Team (Total Rewards)", "topics": ["payroll", "pay schedule", "overtime", "performance review", "pip"]}
+  ]
+}

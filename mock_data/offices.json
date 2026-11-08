@@ -1,0 +1,9 @@
+{
+  "_note": "SYNTHETIC DATA.",
+  "offices": [
+    {"office": "Austin", "country": "US", "state_province": "TX", "timezone": "America/Chicago", "pay_zone": "B", "entity": "Lumora Systems, Inc. (US)", "holiday_calendar": "US"},
+    {"office": "Denver", "country": "US", "state_province": "CO", "timezone": "America/Denver", "pay_zone": "B", "entity": "Lumora Systems, Inc. (US)", "holiday_calendar": "US"},
+    {"office": "Toronto", "country": "CA", "state_province": "ON", "timezone": "America/Toronto", "pay_zone": "B", "entity": "Lumora Systems Canada Inc.", "holiday_calendar": "CA"},
+    {"office": "London", "country": "UK", "state_province": "England", "timezone": "Europe/London", "pay_zone": "B", "entity": "Lumora Systems UK Ltd", "holiday_calendar": "UK"}
+  ]
+}

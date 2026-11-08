@@ -1,0 +1,294 @@
+{
+  "transport": "stdio",
+  "server": {
+    "name": "lumora-hr",
+    "version": "1.30.0",
+    "protocol_version": "2025-11-25"
+  },
+  "tools": [
+    {
+      "name": "search_policy_documents",
+      "description": "Semantic + keyword (hybrid) search over the Lumora HR policy corpus.\n\nArgs:\n    query: natural-language question or keywords, e.g. \"notice required for 3 days of PTO\".\n    k: number of passages to return (1-10).\n    doc_ids: optional filter, e.g. [\"POL-002\", \"POL-005\"].\nReturns passages with doc_id, title, section_id, citation, snippet and text.",
+      "input_schema": {
+        "properties": {
+          "query": {
+            "title": "Query",
+            "type": "string"
+          },
+          "k": {
+            "default": 5,
+            "title": "K",
+            "type": "integer"
+          },
+          "doc_ids": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Doc Ids"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "title": "search_policy_documentsArguments",
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_policy_section",
+      "description": "Return the full text of a policy section (and its subsections), e.g. doc_id=\"POL-005\", section_id=\"7\".\nOmit section_id to list the document's sections.",
+      "input_schema": {
+        "properties": {
+          "doc_id": {
+            "title": "Doc Id",
+            "type": "string"
+          },
+          "section_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Section Id"
+          }
+        },
+        "required": [
+          "doc_id"
+        ],
+        "title": "get_policy_sectionArguments",
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_policy_documents",
+      "description": "List all indexed policy documents with their IDs, titles, source formats and sections.",
+      "input_schema": {
+        "properties": {},
+        "title": "list_policy_documentsArguments",
+        "type": "object"
+      }
+    },
+    {
+      "name": "lookup_employee_profile",
+      "description": "Look up a (synthetic) employee profile: title, department, manager, location, employment type,\nwork arrangement, tenure, performance rating, PIP status and data access level.\nrequester_id enforces privacy: only the employee or their manager receive the full record.",
+      "input_schema": {
+        "properties": {
+          "employee_id": {
+            "title": "Employee Id",
+            "type": "string"
+          },
+          "requester_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Requester Id"
+          }
+        },
+        "required": [
+          "employee_id"
+        ],
+        "title": "lookup_employee_profileArguments",
+        "type": "object"
+      }
+    },
+    {
+      "name": "check_pto_balance",
+      "description": "Return the employee's current PTO balance, annual entitlement, accrual, carryover, sick days,\nfloating holidays, upcoming approved PTO and pending requests (synthetic, in days).",
+      "input_schema": {
+        "properties": {
+          "employee_id": {
+            "title": "Employee Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "employee_id"
+        ],
+        "title": "check_pto_balanceArguments",
+        "type": "object"
+      }
+    },
+    {
+      "name": "lookup_benefits_status",
+      "description": "Return the employee's current benefits elections and enrollment status (synthetic), plus open enrollment dates.",
+      "input_schema": {
+        "properties": {
+          "employee_id": {
+            "title": "Employee Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "employee_id"
+        ],
+        "title": "lookup_benefits_statusArguments",
+        "type": "object"
+      }
+    },
+    {
+      "name": "check_policy_compliance",
+      "description": "Check a proposed request against encoded Lumora policy rules for a specific employee.\n\nrequest_type: one of\n  - \"pto_request\"            details: {start_date: YYYY-MM-DD, end_date?: YYYY-MM-DD, num_days?: number, request_date?: YYYY-MM-DD}\n  - \"temporary_remote_work\"  details: {destination_country, destination_state?, workdays? | duration_weeks?, start_date?}\n  - \"expense\"                details: {category or description (e.g. \"ergonomic chair\", \"laptop\"), amount?, city?}\n  - \"benefits_eligibility\"   details: {benefit: medical|dental|vision|401k|hsa|life|learning_stipend|wellness_stipend|eap|parental_leave|home_office_stipend}\nReturns a verdict (compliant | allowed_with_approvals | not_compliant | needs_clarification), each check with a\npolicy citation, required approvals and alternatives.",
+      "input_schema": {
+        "properties": {
+          "employee_id": {
+            "title": "Employee Id",
+            "type": "string"
+          },
+          "request_type": {
+            "title": "Request Type",
+            "type": "string"
+          },
+          "details": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Details"
+          }
+        },
+        "required": [
+          "employee_id",
+          "request_type"
+        ],
+        "title": "check_policy_complianceArguments",
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_mock_hr_ticket",
+      "description": "Create a MOCK HR case (writes only to a local demo file; no real system is touched).\n\nSafety: with confirm=false (default) this returns a preview and creates nothing. Only call with\nconfirm=true after the user has explicitly confirmed. Severity 1 = harassment/discrimination/\nretaliation/safety (routes to Employee Relations), 2 = time-sensitive, 3 = standard (POL-012 \u00a74).",
+      "input_schema": {
+        "properties": {
+          "employee_id": {
+            "title": "Employee Id",
+            "type": "string"
+          },
+          "category": {
+            "title": "Category",
+            "type": "string"
+          },
+          "summary": {
+            "title": "Summary",
+            "type": "string"
+          },
+          "severity": {
+            "default": 3,
+            "title": "Severity",
+            "type": "integer"
+          },
+          "policy_refs": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Policy Refs"
+          },
+          "confirm": {
+            "default": false,
+            "title": "Confirm",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "employee_id",
+          "category",
+          "summary"
+        ],
+        "title": "create_mock_hr_ticketArguments",
+        "type": "object"
+      }
+    },
+    {
+      "name": "draft_hr_email",
+      "description": "Draft (but never send) an email from the employee to their manager, HR or another team.\nrecipient: \"manager\" | \"hr\" | \"benefits\" | \"global_mobility\" | \"employee_relations\" | an email address.",
+      "input_schema": {
+        "properties": {
+          "employee_id": {
+            "title": "Employee Id",
+            "type": "string"
+          },
+          "recipient": {
+            "title": "Recipient",
+            "type": "string"
+          },
+          "purpose": {
+            "title": "Purpose",
+            "type": "string"
+          },
+          "key_points": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Key Points"
+          }
+        },
+        "required": [
+          "employee_id",
+          "recipient",
+          "purpose"
+        ],
+        "title": "draft_hr_emailArguments",
+        "type": "object"
+      }
+    },
+    {
+      "name": "generate_onboarding_checklist",
+      "description": "Generate a personalized onboarding checklist with due dates for a (new) employee, based on POL-010,\ntheir start date, employment type, country and work arrangement.",
+      "input_schema": {
+        "properties": {
+          "employee_id": {
+            "title": "Employee Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "employee_id"
+        ],
+        "title": "generate_onboarding_checklistArguments",
+        "type": "object"
+      }
+    }
+  ]
+}
